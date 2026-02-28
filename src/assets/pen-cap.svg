@@ -1,0 +1,22 @@
+<svg width="42" height="80" viewBox="0 0 42 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pen Cap (Matte Graphite) -->
+  <path d="M4 10C4 5 10 0 21 0C32 0 38 5 38 10V75C38 78 35 80 21 80C7 80 4 78 4 75V10Z" fill="#2A2A2A"/>
+  <rect x="4" y="0" width="34" height="80" fill="url(#capGradient)"/>
+  
+  <!-- Metallic Clip -->
+  <path d="M21 10V50C21 55 18 58 15 58" stroke="url(#clipGradient)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="15" cy="58" r="3" fill="url(#clipGradient)"/>
+
+  <defs>
+    <linearGradient id="capGradient" x1="4" y1="40" x2="38" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A1A1A"/>
+      <stop offset="0.5" stop-color="#333333"/>
+      <stop offset="1" stop-color="#1A1A1A"/>
+    </linearGradient>
+    <linearGradient id="clipGradient" x1="15" y1="10" x2="21" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A0A0A0"/>
+      <stop offset="0.5" stop-color="#E0E0E0"/>
+      <stop offset="1" stop-color="#A0A0A0"/>
+    </linearGradient>
+  </defs>
+</svg>
