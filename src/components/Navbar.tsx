@@ -48,7 +48,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden fixed top-20 left-4 right-4 bg-[#0a0a0a]/95 backdrop-blur-xl border border-gray-800 rounded-3xl z-40 overflow-hidden shadow-2xl"
+            className="lg:hidden fixed top-20 left-4 right-4 bg-[#0a0a0a]/95 backdrop-blur-xl border border-gray-800 rounded-3xl z-[100] pointer-events-auto overflow-hidden shadow-2xl"
           >
             <div className="flex flex-col py-6 px-8 space-y-6">
               {navLinks.map((link, i) => (
