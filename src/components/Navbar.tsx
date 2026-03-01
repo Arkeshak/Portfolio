@@ -9,6 +9,20 @@ export default function Navbar() {
 
   const closeMenu = () => setIsOpen(false);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    if (isOpen) closeMenu();
+
+    const element = document.getElementById(targetId);
+    if (element) {
+      // Small timeout allows the mobile menu close animation to start before scrolling
+      // which prevents jitter on lower-end devices
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  };
+
   return (
     <>
       <motion.nav
@@ -22,7 +36,12 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-300">
           {navLinks.map((link, i) => (
-            <a key={i} href={`#${link.toLowerCase()}`} className="hover:text-white transition-colors">
+            <a
+              key={i}
+              href={`#${link.toLowerCase()}`}
+              onClick={(e) => handleNavClick(e, link.toLowerCase())}
+              className="hover:text-white transition-colors"
+            >
               {link}
             </a>
           ))}
@@ -55,7 +74,7 @@ export default function Navbar() {
                 <a
                   key={i}
                   href={`#${link.toLowerCase()}`}
-                  onClick={closeMenu}
+                  onClick={(e) => handleNavClick(e, link.toLowerCase())}
                   className="text-lg font-medium text-gray-300 hover:text-white transition-colors w-full border-b border-gray-800/50 pb-4 last:border-0"
                 >
                   {link}
